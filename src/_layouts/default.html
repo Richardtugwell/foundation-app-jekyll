@@ -13,17 +13,16 @@
           <img src="http://placehold.it/400x150&text=Logo">
         </div>
         <div class="grid-content">
+
         {% include sidebar.html %}
+
         </div>
     </div>
       <div class="grid-block collapse medium-9 large-9 vertical">
-        <div id="header" class="shrink collapse grid-content">
-          <ul class="menu-bar primary">
-            <li class="hide-for-medium"><a zf-open="sidebar" href="#">Categories</a></li>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-          </ul>
+        <div class="grid-content shrink collapse" id="header">
+
+        {% include menubar.html %}
+
         </div>
         <div class="grid-block">
           <div class="grid-block small-12 medium-9 vertical">
