@@ -21,7 +21,6 @@ var isProduction = !!(argv.production);
 var paths = {
   assets: [
     './src/**/*.*',
-    '!./src/templates/**/*.*',
     '!./src/assets/{scss,js}/**/*.*'
   ],
   // Sass will check these folders for files when you use @import.
@@ -62,17 +61,6 @@ gulp.task('copy', function() {
     base: './src/'
   })
     .pipe(gulp.dest('./build'))
-  ;
-});
-
-// Copies your app's page templates and generates URLs for them
-gulp.task('copy:templates', function() {
-  return gulp.src('./src/templates/**/*.html')
-    .pipe(router({
-      path: 'build/assets/js/routes.js',
-      root: 'src'
-    }))
-    .pipe(gulp.dest('./build/templates'))
   ;
 });
 
@@ -159,7 +147,7 @@ gulp.task('server', ['build'], function() {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function(cb) {
-  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], 'copy:templates', cb);
+  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], cb);
 });
 
 // Default task: builds your app, starts a server, and recompiles assets when they change
@@ -171,8 +159,6 @@ gulp.task('default', ['server'], function () {
   gulp.watch(['./src/assets/js/**/*', './js/**/*'], ['uglify:app']);
 
   // Watch static files
-  gulp.watch(['./src/**/*.*', '!./src/templates/**/*.*', '!./src/assets/{scss,js}/**/*.*'], ['copy']);
+  gulp.watch(['./src/**/*.*', '!./src/assets/{scss,js}/**/*.*'], ['copy']);
 
-  // Watch app templates
-  gulp.watch(['./src/templates/**/*.html'], ['copy:templates']);
 });
