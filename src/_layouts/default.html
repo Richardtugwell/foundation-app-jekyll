@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% include head.html %}
+
+<body class="body">
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li>
+                <a href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="hero">
+    <div class="row column text-center">
+        <h1>{{site.tagline}}</h1>
+    </div>
+</section>
+
+<section class="row" id="content">
+    <div class="medium-8 columns">
+        {{content}}
+    </div>
+    <div class="medium-3 columns" data-sticky-container>
+        <div class="sticky" data-sticky data-anchor="content">
+            {% include sidebar.html %}
+        </div>
+    </div>
+</section>
+
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
