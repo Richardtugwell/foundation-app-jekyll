@@ -8,6 +8,7 @@
 var $        = require('gulp-load-plugins')();
 var argv     = require('yargs').argv;
 var gulp     = require('gulp');
+var exec     = require('child_process').exec;
 var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
@@ -51,17 +52,27 @@ var paths = {
 // - - - - - - - - - - - - - - -
 
 // Cleans the build directory
-gulp.task('clean', function(cb) {
+// This happens every time a build starts
+gulp.task('clean', function (done) {
+    return del([
+        'build/assets'
+    ]);
+});gulp.task('clean', function(cb) {
   rimraf('./build', cb);
 });
 
 // Copies everything in the client folder except templates, Sass, and JS
 gulp.task('copy', function() {
-  return gulp.src(paths.assets, {
-    base: './src/'
-  })
-    .pipe(gulp.dest('./build'))
+  return gulp.src(paths.assets)
+    .pipe(gulp.dest('./build/assets'))
   ;
+});
+
+// Run Jekyll build
+gulp.task('jekyll', function (done) {
+    exec('jekyll build', function () {
+        done();
+    })
 });
 
 // Compiles the Foundation for Apps directive partials into a single JavaScript file
@@ -147,7 +158,7 @@ gulp.task('server', ['build'], function() {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function(cb) {
-  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], cb);
+  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify', 'jekyll'], cb);
 });
 
 // Default task: builds your app, starts a server, and recompiles assets when they change
@@ -161,4 +172,6 @@ gulp.task('default', ['server'], function () {
   // Watch static files
   gulp.watch(['./src/**/*.*', '!./src/assets/{scss,js}/**/*.*'], ['copy']);
 
+  // Watch jekyll files
+  gulp.watch(['src/_*/*'], ['jekyll']);
 });

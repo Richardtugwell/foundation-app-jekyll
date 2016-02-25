@@ -4,49 +4,51 @@
 {% include head.html %}
 
 <body>
-    <div class="grid-frame">
-      <div zf-panel position="left" id="sidebar" class="medium-grid-block collapse medium-3 large-3 vertical">
+<div class="grid-frame">
+    <div zf-panel position="left" id="sidebar" class="medium-grid-block collapse medium-3 large-3 vertical">
         <div class="grid-content collapse shrink hide-for-medium">
-          <a href="" class="secondary button expand" zf-close>Close</a>
+            <a href="" class="secondary button expand" zf-close>Close</a>
         </div>
         <div class="grid-content shrink">
-          <h1>East<br>Riding<br>Days</h1>
+            <h1>East<br>Riding<br>Days</h1>
         </div>
         <div class="grid-content">
 
-        {% include sidebar.html %}
+            {% include sidebar.html %}
 
         </div>
     </div>
-      <div class="grid-block collapse medium-9 large-9 vertical">
+    <div class="grid-block collapse medium-9 large-9 vertical">
         <div class="grid-content shrink collapse" id="header">
 
-        {% include menubar.html %}
+            {% include menubar.html %}
 
         </div>
         <div class="grid-block">
-          <div class="grid-block small-12 medium-9 vertical">
-            <div class="grid-content">
+            <div class="grid-block small-12 medium-9 vertical">
+                <div class="grid-content">
 
-             {{content}}
+                    {{content}}
 
+                </div>
             </div>
-          </div>
-          <div class="grid-content medium-3 show-for-medium message-side-bar">
-            <section class="block-list">
-              <header>In This Room</header>
-              <ul>
-                <li><a href="#">Cady Heron</a></li>
-                <li><a href="#">Kevin Gnapoor</a></li>
-                <li><a href="#">Trang Pak</a></li>
-                <li><a href="#">Coach Carr</a></li>
-                <li><a href="#">Regina George</a></li>
-              </ul>
-            </section>
-          </div>
+            <div class="grid-block medium-3 show-for-medium message-side-bar">
+                <div class="grid-content">
+                    <section class="block-list">
+                        <header>In This Room</header>
+                        <ul>
+                            <li><a href="#">Cady Heron</a></li>
+                            <li><a href="#">Kevin Gnapoor</a></li>
+                            <li><a href="#">Trang Pak</a></li>
+                            <li><a href="#">Coach Carr</a></li>
+                            <li><a href="#">Regina George</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
         </div>
-      </div>
-
     </div>
-  </body>
-  </html>
+
+</div>
+</body>
+</html>

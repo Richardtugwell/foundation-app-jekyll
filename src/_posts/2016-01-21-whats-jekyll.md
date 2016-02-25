@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What's Jekyll?
+title: What is Jekyll?
 tags: [jekyll,software]
 categories: [cat1,cat2]
 ---
