@@ -20,6 +20,10 @@ exclude:          [assets]
 destination:      ./build
 keep_files:       [assets]
 
+# Projects
+datapages:
+    layout: datapage.html
+
 # Archives
 jekyll-archives:
   enabled: [tags,categories,year,month]
