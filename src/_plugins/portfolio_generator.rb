@@ -22,15 +22,18 @@ module Jekyll
 
             # Then generate the project pages
             site.data["datapages"].each do |lib_file|
-                lib_file[1].each do |data_file|
+                #category is the name of the datapages sub-folder
                 category = lib_file[0]
+
+                # parse the yml data from each file in the category
+                lib_file[1].each do |data_file|
+
                     data = data_file[1]
 
-                    # I Love Cats -> i-love-cats
                     file_name_slug = slugify(data["title"])
 
-                    # portfolio/i-love-cats/
                     path = File.join(dir, category, file_name_slug)
+
                     data["dir"] = path
 
                     site.pages << DataPage.new(site, site.source, path, data)
