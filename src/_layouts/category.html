@@ -2,4 +2,5 @@
 layout: default
 ---
 <h1>Category Page</h1>
-<h2>{{page.category}}<h2>
+<h2>{{site.portfolio.sections[page.category]["name"]}}</h2>
+    {{site.data.portfolio[page.category]}}
