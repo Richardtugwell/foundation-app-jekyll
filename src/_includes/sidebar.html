@@ -1,72 +1,9 @@
 <section class="block-list">
 <ul>
-{% for section in site.data %}
+{% for item in site.portfolio.sections %}
   <li>
-      <a href="">{{ section[0] }}</a>
+      <a href="/portfolio/{{item[0]}}">{{ item[1].name }}</a>
       </li>
 {% endfor %}
 </ul>
 </section>
-<pre>
-    {{site.data}}
-</pre>
-<!--
-{% if site.categories.size > 0 %}
-    <h4>Categories</h4>
-    <ul>
-        {% for category in site.categories %}
-        <li><a href="/category/{{ category | first }}">{{ category | first }}</a> ( {{ category | last | size }} )</li>
-        {% endfor %}
-    </ul>
-{% endif %}
-{% if site.tags.size > 0 %}
-    <h4>Tags</h4>
-    <ul>
-        {% for tag in site.tags %}
-        <li><a href="/tag/{{ tag | first }}">{{ tag | first }}</a> ( {{ tag | last | size }} )</li>
-        {% endfor %}
-    </ul>
-{% endif %}
--->
-
-          <section class="block-list">
-            <header>Rooms</header>
-            <ul>
-              <li>
-                <a href="#">
-                  Slam Book
-                  <span class="block-list-label">7</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Foundation Chat
-                  <span class="block-list-label">2</span>
-                </a>
-              </li>
-              <li>
-                <a class="success" href="#">
-                  LolCats
-                  <span class="block-list-label">2</span>
-                </a>
-              </li>
-            </ul>
-          </section>
-
-          <section class="block-list">
-            <header>People</header>
-            <ul>
-              <li>
-                <a href="#">
-                  Glen Coco
-                  <span class="block-list-label">2</span>
-                </a>
-              </li>
-              <li>
-                <a class="success" href="#">
-                  Guy Guyerson
-                  <span class="block-list-label">2</span>
-                </a>
-              </li>
-            </ul>
-          </section>

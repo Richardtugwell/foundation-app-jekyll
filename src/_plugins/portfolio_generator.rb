@@ -1,16 +1,32 @@
 module Jekyll
-    class DataPage < Page
-        def initialize(site, base, dir, project_data)
+    class PortfolioPage < Page
+        def initialize(site, base, dir, data, category)
             @site = site
             @base = base
             @dir = dir
-            @name = site.config['datapages']['index'] || 'index.html'
-            @layout = site.config['datapages']['layout']
+            @name = site.config['portfolio']['sections'][category]['index'] || 'index.html'
+            @layout = site.config['portfolio']['sections'][category]['layout']
 
             self.process(@name)
             self.read_yaml(File.join(base, "_layouts"), @layout)
 
-            project_data.each { |key, value| self.data[key] = value }
+            data.each { |key, value| self.data[key] = value }
+        end
+    end
+
+    class CategoryPage < Page
+        def initialize(site, base, dir, category)
+            @site = site
+            @base = base
+            @dir = dir
+            @name = 'index.html'
+            @layout = 'category.html'
+
+            self.process(@name)
+            self.read_yaml(File.join(base, "_layouts"), @layout)
+
+            self.data["category"] = category
+
         end
     end
 
@@ -18,12 +34,14 @@ module Jekyll
         safe true
 
         def generate(site)
-            dir = site.config["datapages_dir"] || "datapages"
+            dir = site.config["portfolio"]["dir"]
 
             # Then generate the project pages
-            site.data["datapages"].each do |lib_file|
+            site.data["portfolio"].each do |lib_file|
                 #category is the name of the datapages sub-folder
                 category = lib_file[0]
+                path = File.join(dir, category)
+                site.pages << CategoryPage.new(site, site.source, path, category)
 
                 # parse the yml data from each file in the category
                 lib_file[1].each do |data_file|
@@ -36,7 +54,9 @@ module Jekyll
 
                     data["dir"] = path
 
-                    site.pages << DataPage.new(site, site.source, path, data)
+                    data["category"] = category
+
+                    site.pages << PortfolioPage.new(site, site.source, path, data, category)
                 end
             end
         end

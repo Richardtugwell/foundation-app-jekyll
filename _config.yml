@@ -20,9 +20,20 @@ exclude:          [assets]
 destination:      ./build
 keep_files:       [assets]
 
-# Projects
-datapages:
-    layout: datapage.html
+# Portfolio
+portfolio:
+    dir: portfolio
+    sections:
+        illustrations:
+            layout: illustration.html
+            index: index.html
+            name: Illustrations
+            slug: illustrations
+        prints:
+            layout: print.html
+            index: index.html
+            name: Prints
+            slug: prints
 
 # Archives
 jekyll-archives:
