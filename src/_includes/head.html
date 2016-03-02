@@ -1,20 +1,14 @@
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    {% if page.title == "Home" %}
-    {{ site.title }} &middot; {{ site.tagline }}
-    {% else %}
-    {{ page.title }} &middot; {{ site.title }}
-    {% endif %}
-  </title>
-    <link href="/assets/css/app.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        {% if page.title == "Home" %}
+        {{ site.title }} &middot; {{ site.tagline }}
+        {% else %}
+        {{ page.title }} &middot; {{ site.title }}
+        {% endif %}
+    </title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+    <link href="/assets/css/app.css" rel="stylesheet" type="text/css">
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/templates.js"></script>
-  <style>
-    .message-input, .message-input .inline-label, .menu-bar {margin-bottom: 0;}
-    #sidebar, .messages {border-right: 1px solid #eee;}
-    .message-side-bar {border-left: 1px solid #eee;}
-    .avatar-section {border-top: 1px solid #eee;}
-  </style></head>

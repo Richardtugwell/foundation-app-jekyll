@@ -5,18 +5,21 @@
 
 <body>
 <div class="grid-frame vertical">
-      <div class="dark title-bar">
+    <div class="dark title-bar">
         <div class="center title"><a ui-sref="home">Image Portfolio</a></div>
         <span class="left hide-for-medium"><a zf-toggle="sub-nav">Menu</a></span>
-      </div>
+    </div>
     <div ng-class="['ui-animation' ]" class="grid-block">
         <div zf-panel position="left" id="sub-nav" class="fast bounceInOut medium-2 medium-grid-block vertical">
-        	<div class="grid-content">
+            <div class="grid-container">
+                <img src="http://placehold.it/400x400?text=logo"/>
+            </div>
+            <div class="grid-content">
                 {% include sidebar.html %}
-        	</div>
+            </div>
         </div>
-        <div class="small-12 medium-8 messages grid-content">
-        	<div class="grid-container">
+        <div class="small-12 medium-10 messages grid-content">
+            <div class="grid-container">
 
                 {{content}}
 

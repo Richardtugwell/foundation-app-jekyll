@@ -2,12 +2,8 @@
 layout: default
 ---
 <h1>Print</h1>
-<h2>{{ page.title }} <span>{{ page.category }}</span></h2>
+<h2>{{ page.title }} <span>{{site.portfolio.sections[page.category]["name"] }}</span></h2>
+
+<img src="/assets/portfolio/{{page.category}}/{{page.id}}.jpg" />
 
 <p>{{ page.description }}</p>
-
-<ul>
-    {% for technology in page.technology %}
-    <li><a>{{ technology }}</a></li>
-    {% endfor %}
-</ul>

@@ -3,19 +3,21 @@ layout: default
 ---
 <h1>{{site.portfolio.sections[page.category]["name"]}}</h1>
 
-		<div class=" grid-block small-up-2 medium-up-2 large-up-3">
-			<!-- Start Albums -->
-            {% for item in site.data.portfolio[page.category] %}
-		  <div class="grid-content">
-		    <div class="card">
+<div class=" grid-block small-up-1 medium-up-2 large-up-3">
+    <!-- Start Albums -->
+    {% for item in site.data.portfolio[page.category] %}
+    <div class="grid-content">
+        <div class="card">
             <a href="/{{item[1].dir}}">
-		      <img src="http://placehold.it/400x200" />
-          </a>
-		      <div class="card-section">
-		        <h4>{{item[1].title}}</h4>
-		        <p>{{item[1].description}}</p>
-		      </div>
-		    </div>
-		  </div>
-          {% endfor %}
+                <img src="/assets/portfolio/{{page.category}}/{{item[0]}}.jpg"/>
+            </a>
+
+            <div class="card-section">
+                <h4>{{item[1].title}}</h4>
+
+                <p>{{item[1].description}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div

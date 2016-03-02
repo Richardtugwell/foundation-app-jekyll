@@ -24,12 +24,12 @@ keep_files:       [assets]
 portfolio:
     dir: portfolio
     sections:
-        illustrations:
+        a:
             layout: illustration.html
             index: index.html
             name: Illustrations
             slug: illustrations
-        prints:
+        b:
             layout: print.html
             index: index.html
             name: Prints
@@ -37,18 +37,18 @@ portfolio:
 
 # Archives
 jekyll-archives:
-  enabled: [tags,categories,year,month]
-  layout: 'archive'
-  permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    day: '/:year/:month/:day/'
-    tag: '/tag/:name/'
-    category: '/category/:name/'
+    enabled: [tags,categories,year,month]
+    layout: 'archive'
+    permalinks:
+        year: '/:year/'
+        month: '/:year/:month/'
+        day: '/:year/:month/:day/'
+        tag: '/tag/:name/'
+        category: '/category/:name/'
 
 
 author:
-  name:           'Richard Tugwell'
+    name:           'Richard Tugwell'
 
 paginate:         5
 
@@ -56,4 +56,4 @@ paginate:         5
 version:          1.0.0
 
 github:
-  repo:           https://github.com/Richardtugwell/foundation-blog-jekyll
+    repo:           https://github.com/Richardtugwell/foundation-blog-jekyll

@@ -52,6 +52,8 @@ module Jekyll
 
                     path = File.join(dir, category, file_name_slug)
 
+                    data["id"] = data_file[0]
+                    
                     data["dir"] = path
 
                     data["category"] = category
