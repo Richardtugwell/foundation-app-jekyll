@@ -1,6 +1,6 @@
 # Foundation For Apps / Jekyll Image Portfolio project
 
-THIS IS A WORK IN PROGRESS. It's intended as an exploration of integrating Jekyll and Foundation for Apps. It's very much a POC kind of thing if you're thinking these seem unlikely companions.
+THIS IS A WORK IN PROGRESS. It's intended as an exploration of integrating Jekyll and Foundation for Apps. It's very much a POC kind of thing.
 
 If you want to play with it.....
 
