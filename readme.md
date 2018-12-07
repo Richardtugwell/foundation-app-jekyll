@@ -1,6 +1,6 @@
 # Foundation For Apps / Jekyll Image Portfolio project
 
-*** PLEASE NOTE THIS CODE IS DEPRECATED. NPM reporting lots of vulnerabilities with gulp dependencies and I haven't had time to fix them. I wouldn't advise using this code in it's current state for anything serious (even if you could!)
+*** PLEASE NOTE THIS CODE IS DEPRECATED. NPM reporting lots of vulnerabilities with gulp dependencies and I haven't had time to fix them so for now I've just removed the package.json dependencies, so the following instructions won't work!!
 
 THIS IS A WORK IN PROGRESS. It's intended as an exploration of integrating Jekyll and Foundation for Apps. It's very much a POC kind of thing.
 
