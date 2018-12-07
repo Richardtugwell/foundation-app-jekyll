@@ -1,5 +1,7 @@
 # Foundation For Apps / Jekyll Image Portfolio project
 
+*** PLEASE NOTE THIS CODE IS DEPRECATED. NPM reporting lots of vulnerabilities with gulp dependencies and I haven't had time to fix them so for now I've just removed the package.json dependencies, so the following instructions won't work!!
+
 THIS IS A WORK IN PROGRESS. It's intended as an exploration of integrating Jekyll and Foundation for Apps. It's very much a POC kind of thing.
 
 If you want to play with it.....
@@ -24,7 +26,6 @@ Open the folder in your command line, and install the required dependencies:
 ```bash
 cd projectname
 npm install
-bower install
 ```
 
 Run `gulp` to run Gulp. Your finished site will be created in a folder called `build`, viewable at this URL:
